@@ -10,12 +10,8 @@ public class RunGame {
         input.nextLine();
 
         nama.setNama();
-        System.out.println(nama.getNama());
 
         nama.setGender();
-
-        System.out.println(nama.getNama());
-
 
         // Initialize Pt Intro dan Arc I
         Intro partIntro = new Intro();
