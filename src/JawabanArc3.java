@@ -33,4 +33,13 @@ public class JawabanArc3 {
         
         return NARASI[n - 1];
     }
+
+    public String getNarasiKhusus(int n){
+        final String NARASI[] = {
+            "Anda menerima tawaran Pak Dito dan mulai melakukan praktik korupsi\nDana publik dialihkan untuk kepentingan pribadi\nKarma akhirnya tiba, KPK menangkap anda dan Pak Dito\nAnda menjalani hukuman penjara 15 tahun\n=== Bad Ending ===",
+            "Anda dengan tegas menolak tawaran Pak Dito dan melaporkannya ke KPK\nDengan bukti yang kuat, Pak Dito ditangkap dan dipenjarakan\nAnda diakui sebagai Pelapor Tindak Pidana Korupsi\nKarirmu cemerlang dan kepercayaan publik terpulihkan\n=== Good Ending ==="
+        };
+
+        return NARASI[n -1];
+    }
 }

@@ -24,9 +24,11 @@ public class Arc3 {
                 System.out.print("YA / TIDAK ");
                 String pilihan = input.nextLine();
                 if(pilihan.equalsIgnoreCase("YA")){
-                    this.totalDosa = recapDosa; 
-                }else if(pilihan.equalsIgnoreCase("TIDAK")){
-                    this.totalMoral = recapDosa + 1;
+                    this.totalDosa = recapDosa;
+                     fx.delayText(jwb.getNarasiKhusus(1));
+                    }else if(pilihan.equalsIgnoreCase("TIDAK")){
+                        this.totalMoral = recapDosa + 1;
+                        fx.delayText(jwb.getNarasiKhusus(2));
                 }else{
                     System.out.println("Invalid");
                 }
