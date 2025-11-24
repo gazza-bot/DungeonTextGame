@@ -1,18 +1,26 @@
-## Getting Started
+## Permainan Teks Dungeon
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Selamat datang di proyek Permainan Teks Dungeon! Repositori ini berisi beberapa proyek Java yang terletak di folder `src`. Setiap proyek diorganisasi untuk membantu Anda belajar, mengeksplorasi, dan mengembangkan permainan dungeon berbasis teks menggunakan Java di Visual Studio Code.
 
-## Folder Structure
+## Struktur Folder
 
-The workspace contains two folders by default, where:
+- `src/`: Berisi semua kode sumber Java untuk proyek permainan dungeon.
+- `lib/`: Menyimpan pustaka eksternal dan dependensi.
+- `bin/`: File hasil kompilasi secara default akan dihasilkan di sini.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Anda dapat menyesuaikan struktur folder dengan mengedit `.vscode/settings.json`.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Memulai
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. **Buka di VS Code:** Jalankan Visual Studio Code dan buka workspace ini.
+2. **Eksplorasi Proyek:** Telusuri folder `src` untuk melihat proyek permainan dungeon yang tersedia.
+3. **Build & Jalankan:** Gunakan alat Java bawaan di VS Code untuk mengompilasi dan menjalankan proyek apa pun.
+4. **Tambah Dependensi:** Kelola pustaka menggunakan tampilan `JAVA PROJECTS`.
 
-## Dependency Management
+## Manajemen Dependensi
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Kelola dependensi Java Anda dengan mudah di VS Code. Pelajari lebih lanjut di [dokumentasi resmi](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## Kontribusi
+
+Silakan berkontribusi dengan menambahkan proyek permainan dungeon baru atau meningkatkan yang sudah ada di folder `src`. Pull request dan saran sangat diterima!
