@@ -1,3 +1,24 @@
+
+/**
+ * Kelas JawabanArc3 digunakan untuk menghasilkan narasi berdasarkan pilihan pemain dalam game.
+ * Kelas ini menyediakan narasi utama dan narasi khusus yang berkaitan dengan skenario korupsi dan moralitas.
+ *
+ * Properti:
+ * - nama: Nama pemain yang akan digunakan dalam narasi.
+ *
+ * Konstruktor:
+ * - JawabanArc3(): Membuat objek dengan nama default "Player".
+ * - JawabanArc3(String nama): Membuat objek dengan nama sesuai parameter.
+ *
+ * Metode:
+ * - getNarasi(int n): Mengembalikan narasi utama berdasarkan indeks yang diberikan.
+ *   Jika indeks melebihi jumlah narasi, akan mengembalikan "Invalid".
+ * - getNarasiKhusus(int n): Mengembalikan narasi khusus (ending) berdasarkan indeks yang diberikan.
+ *
+ * Penggunaan:
+ * Kelas ini cocok digunakan untuk menampilkan cerita interaktif pada game berbasis teks,
+ * khususnya pada bagian yang berkaitan dengan pilihan moral dan konsekuensi tindakan pemain.
+ */
 public class JawabanArc3 {
     private String nama;
 

@@ -1,3 +1,28 @@
+/**
+ * Kelas Arc3 merepresentasikan bagian ketiga dari alur permainan DungeonTextGame.
+ * Kelas ini menangani logika pemilihan antara tindakan baik dan buruk berdasarkan recap dosa dan moral.
+ * Pemain akan diberikan pilihan yang mempengaruhi nilai dosa dan moral mereka.
+ *
+ * Properti:
+ * - nama: Nama pemain.
+ * - totalDosa: Total dosa yang didapatkan pemain pada arc ini.
+ * - recapDosa: Rekap dosa dari arc sebelumnya.
+ * - totalMoral: Total moral yang didapatkan pemain pada arc ini.
+ * - recapMoral: Rekap moral dari arc sebelumnya.
+ * - input: Scanner untuk menerima input dari pemain.
+ * - fx: Objek BtnAndFx untuk efek dan delay teks.
+ * - jwb: Objek JawabanArc3 untuk narasi dan jawaban khusus pada arc ini.
+ *
+ * Konstruktor:
+ * Arc3(String nama, int recapDosa, int recapMoral)
+ *   Membuat objek Arc3 dengan nama pemain, rekap dosa, dan rekap moral dari arc sebelumnya.
+ *
+ * Metode:
+ * - baikBuruk(int n): Menampilkan pilihan kepada pemain dan mengubah nilai dosa/moral berdasarkan pilihan.
+ * - runArc3(String nama): Menjalankan arc ketiga berdasarkan perbandingan recap dosa dan moral.
+ * - getDosa(): Mengembalikan total dosa yang didapatkan pada arc ini.
+ * - getMoral(): Mengembalikan total moral yang didapatkan pada arc ini.
+ */
 import java.util.Scanner;
 
 public class Arc3 {
@@ -58,8 +83,6 @@ public class Arc3 {
     }
 
     public void runArc3(String nama){
-        System.out.println(recapDosa);
-        System.out.println(recapMoral);
         if(recapDosa >= recapMoral){
             fx.delayText(jwb.getNarasi(1));
             fx.delayText(jwb.getNarasi(2));

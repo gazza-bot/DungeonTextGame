@@ -1,3 +1,23 @@
+/**
+ * Kelas Intro digunakan untuk mengatur alur cerita bagian intro dalam permainan DungeonTextGame.
+ * Kelas ini menangani input dari pemain, menampilkan pilihan jawaban, serta mencatat nilai moral dan dosa.
+ * 
+ * Fitur utama:
+ * - Menampilkan cerita dan pilihan jawaban pada Arc Intro.
+ * - Mengelola penambahan nilai moral dan dosa berdasarkan pilihan pemain.
+ * - Menggunakan beberapa kelas lain seperti Identitas, jawabanIntro, dan BtnAndFx untuk mendukung fungsionalitas.
+ * 
+ * Metode:
+ * - runIntro(String nama, boolean gender): Menjalankan seluruh arc intro secara berurutan.
+ * - arcPertama(int n, String nama, boolean gender): Menampilkan cerita dan pilihan pada arc tertentu.
+ * - baikBuruk(int arc, String name): Menampilkan pilihan baik/buruk dan memproses jawaban pemain.
+ * - getTotalMoral(): Mengambil total nilai moral yang didapat pemain selama intro.
+ * - getTotalDosa(): Mengambil total nilai dosa yang didapat pemain selama intro.
+ * 
+ * Catatan:
+ * - Kelas ini hanya menangani bagian intro, nilai moral dan dosa akan divalidasi pada arc ending.
+ * - Pilihan jawaban dan efek tombol diambil dari kelas lain yang terpisah.
+ */
 import java.util.Scanner;
 
 public class Intro {

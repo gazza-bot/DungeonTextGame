@@ -1,3 +1,30 @@
+/**
+ * Kelas Arc2 merepresentasikan sebuah bagian dari permainan dungeon berbasis teks,
+ * di mana pemain akan menjalani sebuah arc cerita kedua dengan pilihan moral.
+ * Kelas ini mengelola interaksi pemain, narasi, dan konsekuensi dari pilihan yang diambil.
+ *
+ * Fitur utama:
+ * - Menampilkan narasi cerita secara bertahap.
+ * - Memberikan pilihan kepada pemain untuk menerima atau menolak suatu tindakan.
+ * - Menghitung total dosa atau moral berdasarkan keputusan pemain.
+ *
+ * Konstruktor:
+ * Arc2(String name)
+ *   Membuat objek Arc2 dengan nama pemain yang diberikan.
+ *
+ * Metode:
+ * - runArc2(String nama): Menjalankan arc kedua dengan narasi dan pilihan moral.
+ * - getDosa(): Mengambil nilai total dosa yang didapat pemain.
+ * - getMoral(): Mengambil nilai total moral yang didapat pemain.
+ *
+ * Penggunaan:
+ * Kelas ini digunakan sebagai bagian dari alur cerita utama, di mana pemain akan
+ * dihadapkan pada pilihan yang mempengaruhi skor moral dan dosa mereka.
+ *
+ * Catatan:
+ * Kelas ini bergantung pada kelas lain seperti Identitas, JawabanArc2, dan BtnAndFx
+ * untuk menjalankan fungsionalitas penuh.
+ */
 import java.util.Random;
 import java.util.Scanner;
 

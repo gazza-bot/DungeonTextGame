@@ -1,3 +1,13 @@
+/**
+ * Kelas RunGame digunakan untuk menjalankan alur utama permainan "Kursi Panas".
+ * Kelas ini menginisialisasi objek Scanner untuk input pengguna dan objek Identitas untuk menyimpan nama serta gender pemain.
+ * 
+ * Metode utama:
+ * - run(): Menampilkan judul permainan, meminta input nama dan gender pemain, lalu menjalankan setiap bagian cerita (Intro, Arc2, Arc3) secara berurutan.
+ * - getRun(): Memanggil metode run() untuk memulai permainan.
+ * 
+ * Setiap bagian cerita (Intro, Arc2, Arc3) diinisialisasi dengan data yang relevan dari pemain dan hasil dari bagian sebelumnya.
+ */
 import java.util.*;
 
 public class RunGame {
@@ -16,8 +26,6 @@ public class RunGame {
         // Initialize Pt Intro dan Arc I
         Intro partIntro = new Intro();
         partIntro.runIntro(nama.getNama(), nama.getGender());
-        System.out.println(partIntro.getTotalDosa());
-        System.out.print(partIntro.getTotalMoral());
         // Initialize Arc II
         Arc2 partDua = new Arc2(nama.getNama());
         partDua.runArc2(nama.getNama());

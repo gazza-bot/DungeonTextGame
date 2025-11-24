@@ -1,3 +1,16 @@
+/**
+ * Kelas BtnAndFx menyediakan fungsi untuk efek tampilan teks dan tombol enter pada UI.
+ *
+ * <p>
+ * Fungsi-fungsi utama:
+ * <ul>
+ *   <li>{@link #delayText(String)} - Menampilkan teks dengan jeda per karakter selama 0.01 detik.</li>
+ *   <li>{@link #enterButton()} - Menampilkan instruksi untuk menekan tombol Enter dan menunggu input pengguna.</li>
+ * </ul>
+ * </p>
+ *
+ * @author (Nama Anda)
+ */
 /* delayText(String untuk menampilkan Kalimat dengan jeda perhurufnya 0.1 s)
  * enterButtom() untuk Tombol enter UI
  */
