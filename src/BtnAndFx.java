@@ -17,7 +17,7 @@ public class BtnAndFx {
         for (char c : text.toCharArray()) {
             System.out.print(c);
             try {
-                Thread.sleep(50);
+                Thread.sleep(10);
             } catch (Exception e) {
             }
         }

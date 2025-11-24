@@ -15,7 +15,7 @@ public class Arc2 {
     private int totalMoral;
 
 
-    private void baikBuruk(String nama){
+    private void baikBuruk(){
         fx.delayText(jwb.getNarasi(11));
         System.out.print("Tolak / Terima :");
         String acc = input.nextLine(); 
@@ -48,7 +48,7 @@ public class Arc2 {
         for(int i = 1; i <= 10;i++){
             fx.delayText(jwb.getNarasi(i));
         }
-        this.baikBuruk(nama);
+        this.baikBuruk();
     }
 
     public int getDosa(){

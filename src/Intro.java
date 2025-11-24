@@ -28,9 +28,9 @@ public class Intro {
         int answer = input.nextInt();
         input.nextLine();
         switch (answer) {
-            case 1 -> nama.addMoral();
+            case 1 -> nama.addDosa();
             case 2 -> nama.addDosa();
-            case 3 -> nama.addDosa();
+            case 3 -> nama.addMoral();
         }
         System.out.println(name + " : " + arrJawab[answer - 1]);
         totalDosa = nama.getDosa();

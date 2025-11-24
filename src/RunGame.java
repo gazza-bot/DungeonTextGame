@@ -16,9 +16,14 @@ public class RunGame {
         // Initialize Pt Intro dan Arc I
         Intro partIntro = new Intro();
         partIntro.runIntro(nama.getNama(), nama.getGender());
+        System.out.println(partIntro.getTotalDosa());
+        System.out.print(partIntro.getTotalMoral());
         // Initialize Arc II
         Arc2 partDua = new Arc2(nama.getNama());
         partDua.runArc2(nama.getNama());
+        // Initialize Arc III dengan mengisi Nama dan total dosa dan total moral dar Arc Sebelumnya
+        Arc3 partTiga = new Arc3(nama.getNama(),partIntro.getTotalDosa() + partDua.getDosa(),partIntro.getTotalMoral() + partDua.getMoral());
+        partTiga.runArc3(nama.getNama());
     }
 
     public void getRun(){
