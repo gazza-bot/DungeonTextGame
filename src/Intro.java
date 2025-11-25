@@ -57,53 +57,58 @@ public class Intro {
         totalMoral = nama.getMoral();
     }
 
+    /**
+     * Dispatcher untuk menampilkan scene berdasarkan nomor arc.
+     * Menggantikan God Method dengan method-method terpisah untuk clarity.
+     */
     private void arcPertama(int n, String nama, boolean gender) {
-
         switch (n) {
-            case 1 -> {
-                System.out.println("Hari ini merupakan hari pelantikanmu sebagai Anggota DPR");
-                fx.enterButton();
-                if (gender) {
-                    System.out.println(
-                            "Pelantik : Dengan menyebut nama Allah yang Maha Pengasih lagi Maha Penyayang Saudara "
-                                    + nama + " resmi kami lantik sebagai anggota dpr");
-                } else {
-                    System.out.println(
-                            "Pelantik : Dengan menyebut nama Allah yang Maha Pengasih lagi Maha Penyayang Saudari "
-                                    + nama + " resmi kami lantik sebagai anggota dpr");
-
-                }
-                fx.enterButton();
-            }
-            case 2 -> {
-                fx.delayText("===Arc I : Niat===");
-                fx.enterButton();
-                System.out.println(nama + " : "
-                        + "Hmm.. Hari yang melelahkan sekali, Akhirnya Mimpiku menjadi wakil rakyat terealisasi ");
-                System.out.println(
-                        nama + " : Tapi Kayanya Modal sama gaji jadi wakil rakyat ga sebanding deh, gimana ya?..");
-                this.baikBuruk(1, nama);
-            }
-
-            case 3 -> {
-                fx.delayText("===Hari Berikutnya===");
-                fx.enterButton();
-                System.out.println(
-                        "Hari ini anda ditanyai tentang kebijakan anda tentang Keuangan negara\nyang mana kebijakan tersebut adalah kebijakan yang ditetapkan oleh pejabat terdahulu dan dirasa merugikan Masyarakat");
-                if (gender) {
-                    System.out.println(
-                            "Wartawan : Bagaimana pendapat Bapak tentang Kebijakan Pembekuan Rekening yang tidak digunakan selama 3 bulan ?");
-                } else {
-                    System.out.println(
-                            "Wartawan : Bagaimana pendapat Ibu tentang Kebijakan Pembekuan Rekening yang tidak digunakan selama 3 bulan ?");
-                }
-                this.baikBuruk(2, nama);
-            }
-            default -> {
-                System.out.println("Invalid");
-            }
-
+            case 1 -> showInaugurationScene(nama, gender);
+            case 2 -> showIntentionScene(nama);
+            case 3 -> showPolicyScene(nama, gender);
+            default -> System.out.println("Invalid");
         }
+    }
+
+    /**
+     * Menampilkan scene pelantikan sebagai anggota DPR.
+     */
+    private void showInaugurationScene(String nama, boolean gender) {
+        System.out.println("Hari ini merupakan hari pelantikanmu sebagai Anggota DPR");
+        fx.enterButton();
+        
+        String title = gender ? "Saudara" : "Saudari";
+        System.out.println("Pelantik : Dengan menyebut nama Allah yang Maha Pengasih lagi Maha Penyayang " 
+                + title + " " + nama + " resmi kami lantik sebagai anggota dpr");
+        
+        fx.enterButton();
+    }
+
+    /**
+     * Menampilkan scene tentang niat/motivasi menjadi DPR dan pilihan moral pertama.
+     */
+    private void showIntentionScene(String nama) {
+        fx.delayText("===Arc I : Niat===");
+        fx.enterButton();
+        System.out.println(nama + " : Hmm.. Hari yang melelahkan sekali, Akhirnya Mimpiku menjadi wakil rakyat terealisasi");
+        System.out.println(nama + " : Tapi Kayanya Modal sama gaji jadi wakil rakyat ga sebanding deh, gimana ya?..");
+        this.baikBuruk(1, nama);
+    }
+
+    /**
+     * Menampilkan scene tentang kebijakan keuangan negara dan pilihan moral kedua.
+     */
+    private void showPolicyScene(String nama, boolean gender) {
+        fx.delayText("===Hari Berikutnya===");
+        fx.enterButton();
+        System.out.println("Hari ini anda ditanyai tentang kebijakan anda tentang Keuangan negara\n"
+                + "yang mana kebijakan tersebut adalah kebijakan yang ditetapkan oleh pejabat terdahulu dan dirasa merugikan Masyarakat");
+        
+        String pronoun = gender ? "Bapak" : "Ibu";
+        System.out.println("Wartawan : Bagaimana pendapat " + pronoun 
+                + " tentang Kebijakan Pembekuan Rekening yang tidak digunakan selama 3 bulan ?");
+        
+        this.baikBuruk(2, nama);
     }
 
     public void runIntro(String nama, boolean gender) {

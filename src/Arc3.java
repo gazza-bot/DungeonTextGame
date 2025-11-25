@@ -35,59 +35,103 @@ public class Arc3 {
     private final BtnAndFx fx = new BtnAndFx();
     JawabanArc3 jwb;
 
-    public Arc3(String nama,int recapDosa, int recapMoral){
-        this.nama = nama; 
+    public Arc3(String nama, int recapDosa, int recapMoral) {
+        this.nama = nama;
         this.recapDosa = recapDosa;
         this.recapMoral = recapMoral;
         jwb = new JawabanArc3(nama);
     }
 
-    private void baikBuruk(int n){
-        switch(n){
-            case 1 ->{
-                System.out.println("Apakah Anda Akan menerima Tawaran Pak Dito");
-                System.out.print("YA / TIDAK ");
-                String pilihan = input.nextLine();
-                if(pilihan.equalsIgnoreCase("YA")){
-                    this.totalDosa = recapDosa;
-                     fx.delayText(jwb.getNarasiKhusus(1));
-                    }else if(pilihan.equalsIgnoreCase("TIDAK")){
-                        this.totalMoral = recapDosa + 1;
-                        fx.delayText(jwb.getNarasiKhusus(2));
-                }else{
-                    System.out.println("Invalid");
-                }
-            }
-            
-            case 2 ->{
-                System.out.println("Lanjutkan investigasi atau Korupsi saja\n(YA / TIDAK) ");
-                String pilihan = input.nextLine();
-                if(pilihan.equalsIgnoreCase("YA")){
-                    this.totalDosa = recapDosa; 
-                    fx.delayText(jwb.getNarasi(11));
-                    fx.delayText(jwb.getNarasi(14));
-                }else if(pilihan.equalsIgnoreCase("TIDAK")){
-                    this.totalMoral = recapDosa + 1;
-                    fx.delayText(jwb.getNarasi(11));
-                    fx.delayText(jwb.getNarasi(12));
-                    fx.delayText(jwb.getNarasi(13));
-                }else{
-                    System.out.println("Invalid");
-                }
-            }
-
-            default -> {
-                System.out.println("invalid");
-            }
+    /**
+     * Dispatcher untuk menangani pilihan berdasarkan tipe arc.
+     */
+    private void baikBuruk(int n) {
+        switch (n) {
+            case 1 -> handleOfferChoice();
+            case 2 -> handleInvestigationChoice();
+            default -> System.out.println("invalid");
         }
     }
 
-    public void runArc3(String nama){
-        if(recapDosa >= recapMoral){
+    /**
+     * Menangani pilihan menerima atau menolak tawaran Pak Dito (Arc 1 path).
+     */
+    private void handleOfferChoice() {
+        System.out.println("Apakah Anda Akan menerima Tawaran Pak Dito");
+        System.out.print("YA / TIDAK ");
+        String pilihan = input.nextLine().trim();
+
+        if (pilihan.equalsIgnoreCase("YA")) {
+            handleOfferYes();
+        } else if (pilihan.equalsIgnoreCase("TIDAK")) {
+            handleOfferNo();
+        } else {
+            System.out.println("Invalid");
+        }
+    }
+
+    /**
+     * Menangani pilihan lanjutkan investigasi atau korupsi (Arc 2 path).
+     */
+    private void handleInvestigationChoice() {
+        System.out.println("Lanjutkan investigasi atau Korupsi saja\n(YA / TIDAK) ");
+        String pilihan = input.nextLine().trim();
+
+        if (pilihan.equalsIgnoreCase("YA")) {
+            handleInvestigationYes();
+        } else if (pilihan.equalsIgnoreCase("TIDAK")) {
+            handleInvestigationNo();
+        } else {
+            System.out.println("Invalid");
+        }
+    }
+
+    /**
+     * Terima tawaran Pak Dito (Bad Ending).
+     */
+    private void handleOfferYes() {
+        this.totalDosa = recapDosa;
+        fx.delayText(jwb.getNarasiKhusus(1));
+    }
+
+    /**
+     * Tolak tawaran Pak Dito (Good Ending).
+     */
+    private void handleOfferNo() {
+        this.totalMoral = recapDosa + 1;
+        fx.delayText(jwb.getNarasiKhusus(2));
+    }
+
+    /**
+     * Lanjutkan investigasi (Good Ending).
+     */
+    private void handleInvestigationYes() {
+        this.totalDosa = recapDosa;
+        fx.delayText(jwb.getNarasi(11));
+        fx.delayText(jwb.getNarasi(14));
+    }
+
+    /**
+     * Korupsi saja (Bad Ending).
+     */
+    private void handleInvestigationNo() {
+        this.totalMoral = recapDosa + 1;
+        fx.delayText(jwb.getNarasi(11));
+        fx.delayText(jwb.getNarasi(12));
+        fx.delayText(jwb.getNarasi(13));
+    }
+
+    /**
+     * Menjalankan arc ketiga berdasarkan perbandingan recap dosa dan moral.
+     */
+    public void runArc3(String nama) {
+        if (recapDosa >= recapMoral) {
+            // Dosa lebih besar atau sama dengan moral → Path Dito
             fx.delayText(jwb.getNarasi(1));
             fx.delayText(jwb.getNarasi(2));
             this.baikBuruk(1);
-        }else{
+        } else {
+            // Moral lebih besar dari dosa → Path Investigasi
             fx.delayText(jwb.getNarasi(3));
             fx.delayText(jwb.getNarasi(4));
             fx.delayText(jwb.getNarasi(7));
@@ -98,11 +142,11 @@ public class Arc3 {
         }
     }
 
-    public int getDosa(){
+    public int getDosa() {
         return this.totalDosa;
     }
 
-    public int getMoral(){
+    public int getMoral() {
         return this.totalMoral;
     }
 }
