@@ -49,7 +49,7 @@ public class Arc3 {
                 System.out.print("YA / TIDAK ");
                 String pilihan = input.nextLine();
                 if(pilihan.equalsIgnoreCase("YA")){
-                    this.totalDosa = recapDosa;
+                    this.totalDosa = recapMoral + 1;
                      fx.delayText(jwb.getNarasiKhusus(1));
                     }else if(pilihan.equalsIgnoreCase("TIDAK")){
                         this.totalMoral = recapDosa + 1;
@@ -63,7 +63,7 @@ public class Arc3 {
                 System.out.println("Lanjutkan investigasi atau Korupsi saja\n(YA / TIDAK) ");
                 String pilihan = input.nextLine();
                 if(pilihan.equalsIgnoreCase("YA")){
-                    this.totalDosa = recapDosa; 
+                    this.totalDosa = recapMoral + 1; 
                     fx.delayText(jwb.getNarasi(11));
                     fx.delayText(jwb.getNarasi(14));
                 }else if(pilihan.equalsIgnoreCase("TIDAK")){
