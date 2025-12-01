@@ -67,6 +67,7 @@ public class Arc2 {
             fx.delayText(jwb.getNarasi(22));
         }else{
             System.out.println("Invalid input");
+            baikBuruk();
         }  
     }
 

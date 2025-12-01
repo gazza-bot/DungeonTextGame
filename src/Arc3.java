@@ -56,6 +56,7 @@ public class Arc3 {
                         fx.delayText(jwb.getNarasiKhusus(2));
                 }else{
                     System.out.println("Invalid");
+                    baikBuruk(n);
                 }
             }
             
@@ -73,6 +74,7 @@ public class Arc3 {
                     fx.delayText(jwb.getNarasi(13));
                 }else{
                     System.out.println("Invalid");
+                    baikBuruk(n);
                 }
             }
 
